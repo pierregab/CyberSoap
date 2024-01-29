@@ -15,6 +15,21 @@ init python:
 ## et transforms
 define config.check_conflicting_properties = True
 
+init python:
+    import random
+
+    def random_delay_for_car_animation():
+        # Randomly choose a number of seconds between, say, 10 to 30 seconds
+        delay_time = random.randint(10, 30)
+        return delay_time
+
+    def random_delay_for_cat_animation():
+        # Randomly choose a number of seconds between, say, 2 to 10 seconds
+        delay_time = 0.1*random.randint(1, 20)
+        return delay_time
+
+
+
 image star_animation :
     "gui/menu/anim_etoile/etoile1.png"
     pause 0.2
@@ -25,12 +40,89 @@ image star_animation :
     "gui/menu/anim_etoile/etoile4.png"
     repeat
 
+image building_animation : 
+    "gui/menu/lumiere_building/fond1.png"
+    pause 1
+    "gui/menu/lumiere_building/fond2.png"
+    pause 1
+    "gui/menu/lumiere_building/fond3.png"
+    pause 1
+    "gui/menu/lumiere_building/fond4.png"
+    repeat
+
+image cat_animation:
+    "gui/menu/anim_chat/fond1.png"
+    pause random_delay_for_cat_animation()
+    "gui/menu/anim_chat/fond2.png"
+    pause random_delay_for_cat_animation()
+    "gui/menu/anim_chat/fond3.png"
+    pause random_delay_for_cat_animation()
+    "gui/menu/anim_chat/fond4.png"
+    pause random_delay_for_cat_animation()
+    repeat
+
+image car_animation:
+    "gui/menu/anim_voiture/fond1.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond2.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond3.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond4.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond5.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond6.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond7.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond8.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond9.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond10.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond11.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond12.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond13.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond14.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond15.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond16.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond17.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond18.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond19.png"
+    pause 0.070
+    "gui/menu/anim_voiture/fond20.png"
+    pause 0.070
+    "gui/menu/anim_voiture/fond21.png"
+    pause 0.050
+    "gui/menu/anim_voiture/fond22.png"
+    pause 0.050
+    "gui/menu/anim_voiture/fond23.png"
+    # random delay between 10 and 30 seconds
+    pause random_delay_for_car_animation()
+    repeat
+
 
 layeredimage main_menu_animated:
     always:
         "gui/menu/main_fond/fond_resized.png"
     always:
+        "car_animation"
+    always:
         "star_animation"
+    always:
+        "cat_animation"
+    always:
+        "building_animation"
 
 
 ################################################################################
@@ -48,14 +140,14 @@ define gui.accent_color = '#9c00cc'
 
 ## La couleur utilisée pour le texte d’un bouton quand il n’a jamais été
 ## sélectionné ou survolé.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#661862'
 
 ## La petite couleur est utilisé pour les textes courts qui nécessitent d’être
 ## assombris ou éclairés pour obtenir le même effet.
 define gui.idle_small_color = '#aaaaaa'
 
 ## Cette couleur est utilisée pour les boutons et les barres qui sont survolées.
-define gui.hover_color = '#66c1e0'
+define gui.hover_color = '#bd81d8'
 
 ## Cette couleur est utilisé pour le texte d’un bouton sélectionné, mais qui n’a
 ## pas le focus. Un bouton est sélectionné s’il est sur l’écran actuel ou si
@@ -64,7 +156,7 @@ define gui.selected_color = '#ffffff'
 
 ## La couleur utilisée pour le texte d’un bouton qui ne peut pas être
 ## sélectionné.
-define gui.insensitive_color = '#8888887f'
+define gui.insensitive_color = '#6319577f'
 
 ## Couleurs utilisées pour les portions de barres qui ne sont pas remplies.
 ## Elles ne sont pas utilisées directement, mais quand les fichiers d’images
@@ -95,7 +187,7 @@ define gui.text_size = 30
 define gui.name_text_size = 30
 
 ## La taille du texte dans l’interface de jeu.
-define gui.interface_text_size = 33
+define gui.interface_text_size = 30
 
 ## La taille des libellés dans l’interface de jeu.
 define gui.label_text_size = 36
@@ -278,7 +370,7 @@ define gui.file_slot_rows = 2
 
 ## La position sur le côté gauche des boutons de navigation, relatif au côté
 ## gauche de l'écran.
-define gui.navigation_xpos = 60
+define gui.navigation_xpos = 40
 
 ## La position vertical du l’indicateur de saut des dialogues.
 define gui.skip_ypos = 15

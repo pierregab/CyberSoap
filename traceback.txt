@@ -1,34 +1,96 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 60, in script
-    e "test"
-  File "game/script.rpy", line 10, in eline_speaking_callback
-    renpy.show("M talking for 3s", at_list=(pos))
-TypeError: 'ATLTransform' object is not iterable
+Compiling ATL code at game/gui.rpy:86
+  File "game/screens.rpy", line 353, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 353, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 358, in execute
+    add gui.main_menu_background
+  File "renpy/common/00layeredimage.rpy", line 702, in _duplicate
+    d = d._duplicate(None)
+  File "game/gui.rpy", line 86, in <module>
+    apply_random_hue("gui/menu/anim_voiture/fond1.png")
+  File "game/gui.rpy", line 50, in apply_random_hue
+    return im.MatrixColor(image, *matrix)
+TypeError: __init__() takes 3 positional arguments but 22 were given
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 60, in script
-    e "test"
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/character.py", line 501, in display_say
-    c("begin", interact=interact, type=type, **cb_args)
-  File "game/script.rpy", line 10, in eline_speaking_callback
-    renpy.show("M talking for 3s", at_list=(pos))
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/exports.py", line 741, in show
-    for i in at_list:
-TypeError: 'ATLTransform' object is not iterable
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 3582, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 4055, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/screen.py", line 476, in visit_all
+    callback(self)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 4055, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/screen.py", line 487, in per_interact
+    self.update()
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/screen.py", line 680, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 353, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 353, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 358, in execute
+    add gui.main_menu_background
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/sl2/sldisplayables.py", line 454, in sl2add
+    d = d._duplicate(None)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/image.py", line 459, in _duplicate
+    rv.find_target()
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "renpy/common/00layeredimage.rpy", line 702, in _duplicate
+    d = d._duplicate(None)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/image.py", line 459, in _duplicate
+    rv.find_target()
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/transform.py", line 1049, in _duplicate
+    rv.take_execution_state(self)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 418, in take_execution_state
+    block = self.compile()
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 543, in compile
+    block = self.atl.compile(self.context)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 745, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 745, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 1042, in compile
+    child = ctx.eval(expr)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 264, in eval
+    return renpy.python.py_eval(expr, locals=self.context)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/gui.rpy", line 86, in <module>
+    apply_random_hue("gui/menu/anim_voiture/fond1.png")
+  File "game/gui.rpy", line 50, in apply_random_hue
+    return im.MatrixColor(image, *matrix)
+TypeError: __init__() takes 3 positional arguments but 22 were given
 
-macOS-14.2.1-arm64-arm-64bit arm64
+macOS-14.3-arm64-arm-64bit arm64
 Ren'Py 8.1.3.23091805
-Cyber Soap 1.0
-Mon Jan 22 15:48:30 2024
+Cyber Soap 1.0 Development Build
+Mon Jan 29 20:51:53 2024

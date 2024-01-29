@@ -1,4 +1,4 @@
-Mon Jan 29 13:37:23 2024
+Mon Jan 29 21:02:45 2024
 macOS-14.3-arm64-arm-64bit
 Ren'Py 8.1.3.23091805
  
@@ -32,7 +32,477 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.17s
+Interface start. took 0.16s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 2.86s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.03s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 626.85s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/pierregabrielbibalsobeaux/Library/RenPy/backups/Cyber Soap':
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 630.43s
+Early init. took 0.00s
+Loader init. took 0.00s
+Loading error handling. took 0.01s
+Loading script. took 0.03s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 650.71s
+Early init. took 0.00s
+Loader init. took 0.00s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/pierregabrielbibalsobeaux/Library/RenPy/backups/Cyber Soap':
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 659.95s
+Early init. took 0.00s
+Loader init. took 0.00s
+Loading error handling. took 0.01s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/pierregabrielbibalsobeaux/Library/RenPy/backups/Cyber Soap':
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 728.12s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.05s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/pierregabrielbibalsobeaux/Library/RenPy/backups/Cyber Soap':
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 739.59s
+Early init. took 0.00s
+Loader init. took 0.00s
+Loading error handling. took 0.01s
+Loading script. took 0.03s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 752.59s
+Early init. took 0.00s
+Loader init. took 0.00s
+Loading error handling. took 0.01s
+Loading script. took 0.05s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/pierregabrielbibalsobeaux/Library/RenPy/backups/Cyber Soap':
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 908.39s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.07s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/pierregabrielbibalsobeaux/Library/RenPy/backups/Cyber Soap':
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.02s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 938.81s
+Early init. took 0.00s
+Loader init. took 0.00s
+Loading error handling. took 0.01s
+Loading script. took 0.06s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/pierregabrielbibalsobeaux/Library/RenPy/backups/Cyber Soap':
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M3 Pro'
+Version: b'2.1 Metal - 88'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 858) drawable=(3024, 1716)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 988.80s
+Early init. took 0.00s
+Loader init. took 0.00s
+Loading error handling. took 0.01s
+Loading script. took 0.06s
+Loading save slot metadata. took 0.01s
+Loading persistent. took 0.00s
+Running init code. took 0.01s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/pierregabrielbibalsobeaux/Library/RenPy/backups/Cyber Soap':
+Dump and make backups. took 0.02s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.01s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1512, 982)

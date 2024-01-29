@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/gui.rpy", line 18: invalid syntax
-    "gui/menu/main_fond/fond_resized.png" behind "gui/menu/anim_etoile/etoile1.png"
-                                           ^
+File "game/gui.rpy", line 80: expected 'comma or end of line' not found.
+    with im.MatrixColor(random_hue_matrix())
+    ^
 
 Ren'Py Version: Ren'Py 8.1.3.23091805
-Sun Jan 28 23:30:30 2024
+Mon Jan 29 20:47:31 2024
