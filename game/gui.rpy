@@ -196,7 +196,7 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 24
 
 ## La taille du titre du jeu.
-define gui.title_text_size = 75
+define gui.title_text_size = 25
 
 
 ## Menu du jeu et menu principal ###############################################
@@ -370,7 +370,7 @@ define gui.file_slot_rows = 2
 
 ## La position sur le côté gauche des boutons de navigation, relatif au côté
 ## gauche de l'écran.
-define gui.navigation_xpos = 40
+define gui.navigation_xpos = 90
 
 ## La position vertical du l’indicateur de saut des dialogues.
 define gui.skip_ypos = 15
@@ -382,7 +382,7 @@ define gui.notify_ypos = 68
 define gui.choice_spacing = 33
 
 ## Boutons dans la section de navigation du menu principal et du menu de jeu.
-define gui.navigation_spacing = 6
+define gui.navigation_spacing = 40
 
 ## Contrôle l’espacement entre les préférences.
 define gui.pref_spacing = 15
@@ -576,7 +576,7 @@ init python:
         gui.choice_button_width = 1860
         gui.choice_button_text_size = 45
 
-        gui.navigation_spacing = 30
+        gui.navigation_spacing = 40
         gui.pref_button_spacing = 15
 
         gui.history_height = 285
