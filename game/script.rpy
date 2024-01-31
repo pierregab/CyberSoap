@@ -65,17 +65,18 @@ label pc:
 
 screen news_app():
     # Utilisez frame pour l'arrière-plan du menu de l'application
+    zorder 0
 
     frame:
 
-        background "Capitimefenetre.png"
+        background "Capitimefenetre.png" at offset_y
         
         # Utilisez viewport à l'intérieur du frame pour la partie défilable
         viewport:
-            xpos 103
-            ypos 289
-            xsize 1300
-            ysize 640
+            xpos 113
+            ypos 286
+            xsize 1282
+            ysize 648
             draggable True  # Permet au joueur de faire glisser pour défiler
             scrollbars "vertical"  # Défilement vertical seulement
             mousewheel True  # Défilement avec la molette de la souris
@@ -94,12 +95,13 @@ screen news_app():
             idle "bouton_quitter.png"
             action Jump("pc")
             xpos 1352
-            ypos 111
+            ypos 109
 
 
 
 
 screen pc :
+    zorder 2
     imagebutton:
         idle "Apli_2.png"
         action Jump("email_app")
