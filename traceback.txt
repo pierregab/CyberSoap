@@ -1,94 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/script.rpy:94
-  File "game/script.rpy", line 325, in script
-    pause(total_loading_duration)
-  File "renpy/common/000statements.rpy", line 459, in execute_pause
-    renpy.pause(delay)
-  File "game/script.rpy", line 293, in execute
-    screen loading :
-  File "game/script.rpy", line 293, in execute
-    screen loading :
-  File "game/script.rpy", line 298, in execute
-    add "Neko_loading" at offset_neko
-  File "game/script.rpy", line 94, in <module>
-    pause random_delay()
-  File "game/script.rpy", line 23, in random_delay
-    if number_of_reset > 0:
-UnboundLocalError: local variable 'number_of_reset' referenced before assignment
+While running game code:
+  File "game/script.rpy", line 250, in script
+    call screen pc
+ScriptError: could not find label 'email_app'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 325, in script
-    pause(total_loading_duration)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/ast.py", line 2259, in execute
-    self.call("execute")
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/ast.py", line 2241, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/statements.py", line 342, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 459, in execute_pause
-    renpy.pause(delay)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/exports.py", line 1638, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 3582, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 4055, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 684, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 684, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 684, in visit_all
-    d.visit_all(callback, seen)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/screen.py", line 476, in visit_all
-    callback(self)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/core.py", line 4055, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/screen.py", line 487, in per_interact
-    self.update()
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/screen.py", line 680, in update
-    self.screen.function(**self.scope)
-  File "game/script.rpy", line 293, in execute
-    screen loading :
-  File "game/script.rpy", line 293, in execute
-    screen loading :
-  File "game/script.rpy", line 298, in execute
-    add "Neko_loading" at offset_neko
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/sl2/sldisplayables.py", line 454, in sl2add
-    d = d._duplicate(None)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/image.py", line 459, in _duplicate
-    rv.find_target()
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/display/transform.py", line 1049, in _duplicate
-    rv.take_execution_state(self)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 418, in take_execution_state
-    block = self.compile()
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 543, in compile
-    block = self.atl.compile(self.context)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 745, in compile
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 745, in <listcomp>
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 1106, in compile
-    duration = ctx.eval(self.duration)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/atl.py", line 264, in eval
-    return renpy.python.py_eval(expr, locals=self.context)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/python.py", line 1153, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/python.py", line 1146, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 94, in <module>
-    pause random_delay()
-  File "game/script.rpy", line 23, in random_delay
-    if number_of_reset > 0:
-UnboundLocalError: local variable 'number_of_reset' referenced before assignment
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/main.py", line 670, in main
+    run(restart)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/main.py", line 144, in run
+    renpy.execution.run_context(True)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/execution.py", line 955, in run_context
+    context.run()
+  File "game/script.rpy", line 250, in script
+    call screen pc
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/script.py", line 1013, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'email_app'.
 
 macOS-14.3-arm64-arm-64bit arm64
 Ren'Py 8.1.3.23091805
 Cyber Soap 0.1 Development Build
-Sat Feb  3 19:55:38 2024
+Sat Feb  3 20:58:27 2024

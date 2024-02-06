@@ -200,6 +200,48 @@ label pc:
     call screen pc
     return
 
+label start_menu:
+    call screen start_menu
+    return
+
+screen start_menu:
+    zorder 1
+    add "start_menu.png"
+    imagebutton:
+        idle "Apli_2.png"
+        action Jump("email_app")
+        xpos 1200
+        ypos 120
+    
+    imagebutton:
+        idle "Apli_1.png"
+        action Jump("time_app")
+        xpos 1200
+        ypos 320
+
+    imagebutton:
+        idle "Apli_3.png"
+        action Jump("love_app")
+        xpos 1200
+        ypos 520
+
+    imagebutton:
+        idle "bouton_off.png"
+        action Jump("pc_off")
+        xpos 100
+        ypos 900
+
+    add "Ecran_filtre.png" at offset_y
+    add "b_ta.png" at offset_y
+
+    imagebutton:
+        idle "start_button_idle.png"
+        hover "start_button_hover.png"
+        clicked "start_button_clicked.png"
+        action Jump("pc")
+        xpos 116
+        ypos 890
+
 screen news_app():
     # Utilisez frame pour l'arrière-plan du menu de l'application
     zorder 1
@@ -267,20 +309,20 @@ screen pc :
     imagebutton:
         idle "Apli_2.png"
         action Jump("email_app")
-        xpos 1100
-        ypos 200
+        xpos 1200
+        ypos 120
     
     imagebutton:
         idle "Apli_1.png"
         action Jump("time_app")
-        xpos 1100
-        ypos 450
+        xpos 1200
+        ypos 320
 
     imagebutton:
         idle "Apli_3.png"
         action Jump("love_app")
-        xpos 1100
-        ypos 700
+        xpos 1200
+        ypos 520
 
     imagebutton:
         idle "bouton_off.png"
@@ -289,6 +331,15 @@ screen pc :
         ypos 900
 
     add "Ecran_filtre.png" at offset_y
+    add "b_ta.png" at offset_y
+
+    imagebutton:
+        idle "start_button_idle.png"
+        hover "start_button_hover.png"
+        clicked "start_button_clicked.png"
+        action Jump("start_menu")
+        xpos 116
+        ypos 890
 
 screen loading :
     zorder 0
