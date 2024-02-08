@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 250, in script
+    call screen pc
+ScriptError: could not find label 'email_app'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/main.py", line 670, in main
+    run(restart)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/main.py", line 144, in run
+    renpy.execution.run_context(True)
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/execution.py", line 955, in run_context
+    context.run()
+  File "game/script.rpy", line 250, in script
+    call screen pc
+  File "/Users/pierregabrielbibalsobeaux/Desktop/renpy-8.1.3-sdk/renpy/script.py", line 1013, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'email_app'.
+
+macOS-14.3-arm64-arm-64bit arm64
+Ren'Py 8.1.3.23091805
+Cyber Soap 0.1 Development Build
+Sat Feb  3 20:58:27 2024
