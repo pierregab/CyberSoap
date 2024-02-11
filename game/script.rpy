@@ -225,11 +225,11 @@ screen start_menu:
         xpos 1200
         ypos 520
 
-    imagebutton:
-        idle "bouton_off.png"
-        action Jump("pc_off")
-        xpos 100
-        ypos 900
+    #imagebutton:
+    #    idle "bouton_off.png"
+    #   action Jump("pc_off")
+    #    xpos 100
+    #    ypos 900
 
     add "Ecran_filtre.png" at offset_y
     add "b_ta.png" at offset_y
@@ -245,6 +245,20 @@ screen start_menu:
     imagebutton:
         idle "menu_sauver_button.png"
         action ShowMenu("save")
+        xpos 116
+        ypos 728
+
+    imagebutton:
+        idle "menu_charger_button.png"
+        action ShowMenu("load")
+        xpos 116
+        ypos 780
+
+    imagebutton:
+        idle "menu_stop_button.png"
+        action Quit(confirm=True)
+        xpos 116
+        ypos 832
 
 screen news_app():
     # Utilisez frame pour l'arrière-plan du menu de l'application
@@ -328,11 +342,11 @@ screen pc :
         xpos 1200
         ypos 520
 
-    imagebutton:
-        idle "bouton_off.png"
-        action Jump("pc_off")
-        xpos 100
-        ypos 900
+    #imagebutton:
+    #    idle "bouton_off.png"
+    #    action Jump("pc_off")
+    #    xpos 100
+    #    ypos 900
 
     add "Ecran_filtre.png" at offset_y
     add "b_ta.png" at offset_y

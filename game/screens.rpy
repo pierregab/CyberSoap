@@ -584,6 +584,12 @@ style about_label_text:
 ## https://www.renpy.org/doc/html/screen_special.html#save https://
 ## www.renpy.org/doc/html/screen_special.html#load
 
+style slot_text:
+    size 20
+    color "#FFFFFF"  # White color for the text
+    outlines [(2, "#000000", 0, 0)]  # Black outline for better readability
+
+
 screen save():
 
     tag menu
@@ -600,92 +606,56 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Sauvegardes automatiques"), quick=_("Sauvegardes rapides"))
+    # Set the custom background image for the save/load screen.
+    add "images/save_menu.png" at center
 
-    use game_menu(title):
+    # Define the grid for the save slots.
+    grid 1 3:  # This specifies 1 column and 3 rows.
+        xalign 0.5
+        yalign 0.57
+        spacing 165
 
-        fixed:
+        for i in range(3):  # Adjust the range if you have more or fewer slots.
+            $ slot = i + 1
 
-            ## Cette instruction s’assure que l’évènement enter aura lieu avant
-            ## que l’un des boutons ne fonctionne.
-            order_reverse True
-
-            ## Le nom de la page, qui peut être modifié en cliquant sur un
-            ## bouton.
+            # Create a button for each save slot.
             button:
-                style "page_label"
+                action FileAction(slot)
+                xalign 0.5  # Center of the screen
+                yalign (i * 0.333) + 0.167  # Adjust for positioning
 
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
+                # Display the slot number and save date for each slot.
+                text "Slot {0}: {1}".format(slot, FileTime(slot, empty=_("Empty Slot"))):
+                    style "slot_text"
+                    xalign 0.5  # Center text horizontally within the button
+                    yalign 0.5  # Center text vertically within the button
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+    # Page navigation buttons
+    vbox:
+        style_prefix "page"
+        xalign 0.5
+        yalign 0.95
+        hbox:
+            xalign 0.5
+            spacing gui.page_spacing
 
-            ## La grille des emplacements de fichiers.
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
+            textbutton _("<") action FilePagePrevious()
 
-                xalign 0.5
-                yalign 0.5
+            if config.has_autosave:
+                textbutton _("{#auto_page}A") action FilePage("auto")
 
-                spacing gui.slot_spacing
+            # The range is set to 1 to 4 for demonstration. Adjust as needed.
+            for page in range(1, 5):
+                textbutton "[page]" action FilePage(page)
 
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
+            textbutton _(">") action FilePageNext()
 
-                    $ slot = i + 1
+    # Return button
+    textbutton _("Return"):
+        action Return()
+        xalign 0.85
+        yalign 0.99  # Adjust the alignment to place it where you want
 
-                    button:
-                        action FileAction(slot)
-
-                        has vbox
-
-                        add FileScreenshot(slot) xalign 0.5
-
-                        text FileTime(slot, format=_("{#file_time}%A %d %B %Y, %H:%M"), empty=_("emplacement vide")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
-                            style "slot_name_text"
-
-                        key "save_delete" action FileDelete(slot)
-
-            ## Boutons pour accéder aux autres pages.
-            vbox:
-                style_prefix "page"
-
-                xalign 0.5
-                yalign 1.0
-
-                hbox:
-                    xalign 0.5
-
-                    spacing gui.page_spacing
-
-                    textbutton _("<") action FilePagePrevious()
-
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
-
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                    ## range(1, 10) donne les nombres de 1 à 9.
-                    for page in range(1, 10):
-                        textbutton "[page]" action FilePage(page)
-
-                    textbutton _(">") action FilePageNext()
-
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("Uploader Sync"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("Télécharger Sync"):
-                            action DownloadSync()
-                            xalign 0.5
 
 
 style page_label is gui_label
