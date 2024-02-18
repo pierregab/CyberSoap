@@ -186,10 +186,21 @@ image M talking for 2s:
     pause 2.0  # Duration of talking
     "M idle"  # Switch back to idle animation after talking
 
+image L :
+    yalign 0.042
+    xalign 0.75
+    "louise2.png"
+
 
 # Déclarez les personnages utilisés dans le jeu.
 define e = Character('Eline', color="#612067", what_slow_cps=30, what_slow_abortable=False, callback=eline_speaking_callback)
+define e_i = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=False, callback=eline_speaking_callback)
+define e_without_callback = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=False)
 
+define l = Character('Léa', color="#20675a", what_slow_cps=30, what_slow_abortable=False)
+define l_i = Character('???', color="#20675a", what_slow_cps=30, what_slow_abortable=False)
+
+define myself = Character('', color="#ffffff", what_slow_cps=30, what_slow_abortable=False)
 
 label time_app:
     call screen news_app
@@ -373,20 +384,40 @@ label start:
 
     window auto hide
 
+    l_i "Tu penses que je dois encore nettoyer l'intérieur du lave verre au cure dent ?"
+    e_without_callback "Heu..."
+    e_without_callback "Attends, je crois que je vois quelqu'un !"
+
+
     scene fond
 
     show M idle:
         yalign 0.042
         xalign 0.4
-
+    show L :
+        yalign 0.067
+        xalign 0.75
     with fade
 
-    e "test"
+    e_i "Bienvenue !"
 
-    "testtttt"
+    myself "*Oh, il n'y a pas grand monde...*"
 
-    e "Bienvenue aux Cyber Savons !"
+    "Une douce odeur de café flotte dans l'air, contrastant avec l'incroyable quantité de bouteilles d'alcool qui remplissent les étagères."
 
+    l_i "Il vous faut quelque chose ? Vous pouvez vous installer au comptoir, enfin, vous n'aurez pas trop de mal à trouver une place..."
+
+    myself "En fait, on m'a dit de passer pour récuper les clefs de l'appartement juste au dessus..."
+
+    e_i "Oh, vous êtes le nouveau locataire ?"
+
+    myself "Oui, c'est ça. ! Je viens d'arriver en ville."
+
+    e "Enchanté ! Je suis Eline, la gérante de cet établissement. Et voici Léa, ma collègue."
+
+    l "Et moi qui pensait que j'avais enfin quelqu'un à servir..."
+
+    myself "Oh, si ce n'est que ça, je vais vous prendre quelque chose !"
 
     scene computer_screen_off at offset_y with fade
     show screen loading
