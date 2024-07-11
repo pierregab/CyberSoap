@@ -384,9 +384,9 @@ label start:
 
     window auto hide
 
-    l_i "Tu penses que je dois encore nettoyer l'intérieur du lave verre au cure dent ?"
-    e_without_callback "Heu..."
-    e_without_callback "Attends, je crois que je vois quelqu'un !"
+    l_i "Test"
+    e_without_callback "test"
+    e_without_callback "test"
 
 
     scene fond
