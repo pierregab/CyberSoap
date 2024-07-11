@@ -399,25 +399,25 @@ label start:
         xalign 0.75
     with fade
 
-    e_i "Bienvenue !"
+    e_i "test"
 
-    myself "*Oh, il n'y a pas grand monde...*"
+    myself "test"
 
-    "Une douce odeur de café flotte dans l'air, contrastant avec l'incroyable quantité de bouteilles d'alcool qui remplissent les étagères."
+    "test"
 
-    l_i "Il vous faut quelque chose ? Vous pouvez vous installer au comptoir, enfin, vous n'aurez pas trop de mal à trouver une place..."
+    l_i "test"
 
-    myself "En fait, on m'a dit de passer pour récuper les clefs de l'appartement juste au dessus..."
+    myself "test"
 
-    e_i "Oh, vous êtes le nouveau locataire ?"
+    e_i "test"
 
-    myself "Oui, c'est ça. ! Je viens d'arriver en ville."
+    myself "test"
 
-    e "Enchanté ! Je suis Eline, la gérante de cet établissement. Et voici Léa, ma collègue."
+    e "test"
 
-    l "Et moi qui pensait que j'avais enfin quelqu'un à servir..."
+    l "test"
 
-    myself "Oh, si ce n'est que ça, je vais vous prendre quelque chose !"
+    myself "test"
 
     scene computer_screen_off at offset_y with fade
     show screen loading
