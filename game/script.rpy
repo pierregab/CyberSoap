@@ -380,8 +380,8 @@ screen loading :
 
 
 screen drink_order_buttons():
+    window 
     zorder 1
-    window
     vbox:
         xalign 0.2
         yalign 0.9
@@ -411,13 +411,12 @@ label order_drink_menu:
         "You ordered [selected_drink]."
     else:
         "You decided not to order anything."
-    scene fond
+    return
 
 label no_drink_order:
     hide screen drink_order_buttons
     "You decide not to order a drink."
-    scene computer_screen at offset_y
-    call screen pc
+    return
 
 screen drink_selection():
     modal True
@@ -445,16 +444,17 @@ style drink_menu_title:
     size 24
     xalign 0.5
 
+label drink_selection_flow:
+    call screen drink_order_buttons
+    return
+
 # Le jeu commence ici
 label start:
-
-
-    window auto hide
+    window show
 
     l_i "Test"
     e_without_callback "test"
     e_without_callback "test"
-
 
     scene fond
 
@@ -480,9 +480,26 @@ label start:
 
     myself "test"
 
-    # Show the Yes/No buttons and wait for the player's response
-    call screen drink_order_buttons
+    window hide
 
+    # Call the drink selection flow
+    call drink_selection_flow
+
+    window show
+    scene fond
+
+    show M idle:
+        yalign 0.042
+        xalign 0.4
+    show L :
+        yalign 0.067
+        xalign 0.75
+
+    e "test"
+
+    window hide
+
+    # Continue the story after drink selection
     scene computer_screen_off at offset_y with fade
     show screen loading
     # Use the total_loading_duration for the pause
@@ -494,6 +511,5 @@ label start:
 
     pause
 
-
-
     return
+

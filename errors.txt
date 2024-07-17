@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 384: 'auto' is not a keyword argument or valid child of the window statement.
-    window auto hide:
-               ^
+File "game/script.rpy", line 422: 'hide' is not a keyword argument or valid child of the screen statement.
+    hide window
+        ^
 
 Ren'Py Version: Ren'Py 8.1.3.23091805
-Wed Jul 17 19:06:50 2024
+Wed Jul 17 20:34:53 2024

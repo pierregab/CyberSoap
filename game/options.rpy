@@ -116,8 +116,8 @@ define config.window = "auto"
 
 ## Transitions utilisées pour afficher ou cacher la fenêtre de dialogue
 
-define config.window_show_transition = Dissolve(.2)
-define config.window_hide_transition = Dissolve(.2)
+define config.window_show_transition = None
+define config.window_hide_transition = None
 
 
 ## Préférences par défaut ######################################################
