@@ -378,6 +378,73 @@ screen loading :
     add "Neko_loading" at offset_neko
 
 
+
+screen drink_order_buttons():
+    zorder 1
+    window
+    vbox:
+        xalign 0.2
+        yalign 0.9
+        spacing 20
+        text "Voulez-vous commander un verre ?" style "drink_menu_title"
+        hbox:
+            spacing 20
+            textbutton "Yes" action Jump("order_drink_menu") style "choice_button"
+            textbutton "No" action Jump("no_drink_order") style "choice_button"
+
+style choice_button:
+    background None
+    hover_background "#3333334D"
+    padding (20, 10)
+    xminimum 100
+
+style choice_button_text:
+    color "#ffffff"
+    hover_color "#cccccc"
+    size 24
+
+label order_drink_menu:
+    hide screen drink_order_buttons
+    scene black with pixellate
+    $ selected_drink = renpy.call_screen("drink_selection")
+    if selected_drink != "Cancel":
+        "You ordered [selected_drink]."
+    else:
+        "You decided not to order anything."
+    scene fond
+
+label no_drink_order:
+    hide screen drink_order_buttons
+    "You decide not to order a drink."
+    scene computer_screen at offset_y
+    call screen pc
+
+screen drink_selection():
+    modal True
+    frame:
+        background "black"
+        xfill True
+        yfill True
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            spacing 20
+            text "Select a drink:" style "drink_menu_title"
+            grid 2 3:
+                spacing 10
+                textbutton "Beer" action Return("Beer")
+                textbutton "Wine" action Return("Wine")
+                textbutton "Cocktail" action Return("Cocktail")
+                textbutton "Soda" action Return("Soda")
+                textbutton "Water" action Return("Water")
+                textbutton "Coffee" action Return("Coffee")
+            textbutton "Cancel" action Return("Cancel") xalign 0.5
+
+style drink_menu_title:
+    color "#ffffff"
+    size 24
+    xalign 0.5
+
 # Le jeu commence ici
 label start:
 
@@ -407,17 +474,14 @@ label start:
 
     l_i "test"
 
-    myself "test"
-
-    e_i "test"
-
-    myself "test"
-
     e "test"
 
     l "test"
 
     myself "test"
+
+    # Show the Yes/No buttons and wait for the player's response
+    call screen drink_order_buttons
 
     scene computer_screen_off at offset_y with fade
     show screen loading
