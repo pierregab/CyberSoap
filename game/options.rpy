@@ -15,7 +15,7 @@
 ##
 ## La chaîne de caractère contenu dans _() est éligible à la traduction.
 
-define config.name = _("Cyber Soap")
+define config.name = _("Yofukashi")
 
 
 ## Détermine si le titre renseigné plus haut est affiché sur l'écran du menu
@@ -40,7 +40,7 @@ define gui.about = _p("""
 ## l’exécutable. Il ne doit contenir que des caractères ASCII et ne doit pas
 ## contenir d’espace, de virgules ou de points-virgules.
 
-define build.name = "CyberSoap"
+define build.name = "Yofukashi"
 
 
 ## Sons et musiques ############################################################
@@ -51,7 +51,7 @@ define build.name = "CyberSoap"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 
 ## Pour autoriser le joueur à réaliser un test de volume, décommenter la ligne
@@ -150,7 +150,7 @@ default preferences.afm_time = 15
 ## Cela ne devrait généralement pas changer. Si vous le faîtes, choisissez
 ## toujours une chaîne de caractères littéraux, pas une expression.
 
-define config.save_directory = "CyberSoap-1705868078"
+define config.save_directory = "Yofukashi-1705868078"
 
 
 ## Icône #######################################################################

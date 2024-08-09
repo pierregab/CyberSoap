@@ -7,7 +7,7 @@ init python:
     def eline_speaking_callback(event, **kwargs):
         if event == "begin":
             # Show Eline talking for 2 seconds when she begins speaking
-            renpy.show("M talking for 2s")
+            renpy.show("gerante talking for 2s")
 
 init python:
     # Initialize a global variable to store the total duration
@@ -41,6 +41,100 @@ image computer_screen = "pc.png"
 image computer_screen_off = "pc_off.png"
 
 image image_overlay = "Ecran_filtre.png"
+
+image star_animation :
+    "gui/menu/anim_etoile/etoile1.png"
+    pause 0.2
+    "gui/menu/anim_etoile/etoile2.png"
+    pause 0.2 
+    "gui/menu/anim_etoile/etoile3.png"
+    pause 0.2
+    "gui/menu/anim_etoile/etoile4.png"
+    repeat
+
+image building_animation : 
+    "gui/menu/lumiere_building/fond1.png"
+    pause 1
+    "gui/menu/lumiere_building/fond2.png"
+    pause 1
+    "gui/menu/lumiere_building/fond3.png"
+    pause 1
+    "gui/menu/lumiere_building/fond4.png"
+    repeat
+
+image cat_animation:
+    "gui/menu/anim_chat/fond1.png"
+    pause random_delay_for_cat_animation()
+    "gui/menu/anim_chat/fond2.png"
+    pause random_delay_for_cat_animation()
+    "gui/menu/anim_chat/fond3.png"
+    pause random_delay_for_cat_animation()
+    "gui/menu/anim_chat/fond4.png"
+    pause random_delay_for_cat_animation()
+    repeat
+
+image car_animation:
+    "gui/menu/anim_voiture/fond1.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond2.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond3.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond4.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond5.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond6.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond7.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond8.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond9.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond10.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond11.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond12.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond13.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond14.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond15.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond16.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond17.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond18.png"
+    pause 0.1
+    "gui/menu/anim_voiture/fond19.png"
+    pause 0.070
+    "gui/menu/anim_voiture/fond20.png"
+    pause 0.070
+    "gui/menu/anim_voiture/fond21.png"
+    pause 0.050
+    "gui/menu/anim_voiture/fond22.png"
+    pause 0.050
+    "gui/menu/anim_voiture/fond23.png"
+    # random delay between 10 and 30 seconds
+    pause random_delay_for_car_animation()
+    repeat
+
+
+layeredimage main_menu_animated:
+    always:
+        "gui/menu/main_fond/fond_resized.png"
+    always:
+        "car_animation"
+    always:
+        "star_animation"
+    always:
+        "cat_animation"
+    always:
+        "building_animation"
 
 transform offset_y:
     yoffset -5  # Replace 100 with the number of pixels you want to offset by
@@ -159,7 +253,7 @@ image neko_fond = "NekoOS_fond.png"
 
 
 # Define the animated image for 'M'
-image M idle:
+image gerante idle:
     yalign 0.042
     xalign 0.4
     "M1.png"
@@ -172,7 +266,7 @@ image M idle:
     pause 0.3
     repeat
 
-image M talk:
+image gerante talk:
     yalign 0.042
     xalign 0.4
     "M1.png"
@@ -181,26 +275,28 @@ image M talk:
     pause .3  # Duration the mouth stays open
     repeat
 
-image M talking for 2s:
-    "M talk"  # This will play the talking animation
+image gerante talking for 2s:
+    "gerante talk"  # This will play the talking animation
     pause 2.0  # Duration of talking
-    "M idle"  # Switch back to idle animation after talking
+    "gerante idle"  # Switch back to idle animation after talking
 
-image L :
+image Rana :
     yalign 0.042
     xalign 0.75
     "louise2.png"
 
 
 # Déclarez les personnages utilisés dans le jeu.
-define e = Character('Eline', color="#612067", what_slow_cps=30, what_slow_abortable=False, callback=eline_speaking_callback)
-define e_i = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=False, callback=eline_speaking_callback)
-define e_without_callback = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=False)
+define gerante = Character('Eline', color="#612067", what_slow_cps=30, what_slow_abortable=False, callback=eline_speaking_callback)
+define gerante_i = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=False, callback=eline_speaking_callback)
+define gerante_i_hide = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=False)
 
-define l = Character('Léa', color="#20675a", what_slow_cps=30, what_slow_abortable=False)
-define l_i = Character('???', color="#20675a", what_slow_cps=30, what_slow_abortable=False)
+define Rana = Character('Rana', color="#20675a", what_slow_cps=30, what_slow_abortable=False)
+define Rana_i = Character('???', color="#20675a", what_slow_cps=30, what_slow_abortable=False)
 
-define myself = Character('', color="#ffffff", what_slow_cps=30, what_slow_abortable=False)
+define myself = Character('Alix', color="#53ddf3", what_slow_cps=30, what_slow_abortable=False)
+
+define vox = Character('VOX', color="#f81717", what_slow_cps=30, what_slow_abortable=False)
 
 label time_app:
     call screen news_app
@@ -448,38 +544,129 @@ label drink_selection_flow:
     call screen drink_order_buttons
     return
 
+screen choice_menu():
+    zorder 100  # High zorder to ensure it's in front of everything
+    vbox:
+        xalign 0.2
+        yalign 0.9  # Adjust the vertical position as needed
+        spacing 20  # Adjust spacing between buttons
+
+        textbutton "Aller fumer avec Rana":
+            action Jump("smoke_with_rana")
+            style "menu_choice_button"
+
+        textbutton "Rester avec Eline":
+            action Jump("stay_with_eline")
+            style "menu_choice_button"
+
+style menu_choice_button:
+    size_group "choice"
+    xalign 0.5
+    yalign 0.5
+    background None
+    hover_background "#3333334D"
+    padding (10, 10)
+    xminimum 300
+    text_align 0
+
+
+label smoke_with_rana:
+    "Il se passe des trucs"
+    # Continue with the storyline where the player goes to smoke with Rana.
+    # Jump back to the main story after this choice
+    jump after_choice
+
+label stay_with_eline:
+    # This label handles the scenario where the player chooses to stay with Eline.
+    
+    hide Rana with fade 
+
+    vox "L’insecurité qui sévit dans les rues de notre belle ville saura être combattu à sa source grâce à cette loi."
+    vox "La entreprise pour l’ordre sera à votre côté pour faire le ménage parmis les artistes qui veulent nuit à notre société. Elle remettra à l’ordre tous les fauteurs de trouble, les mésinformateurs, des petits délinquants du graphiti jusqu’aux organisation d’artistes anarchistes qui se prennent pour la mafia !"
+
+    gerante "Je vais baisser le son."
+
+    myself "Ça fait peur cette histoire…"
+
+    gerante "Non ne t’inquiètes pas. C’est toujours pareil : de grands mots pour pas grand chose. Au final rien ne change vraiment jamais tu sais. C’est juste du vent la politique."
+
+    myself "Si vous le dites."
+
+    gerante "Je t’en prie Alix, ne me vouvoie pas ! Je ne suis pas si vieille que ça. Et puis tu sais, une fois que tu mets un pied dans ce bar tu fais partie de la famille."
+
+    myself "Comment ça ? C’est une sorte de… secte ?"
+
+    gerante "Ahaha non non ne t’inquiètes pas. C’est juste que tu ne connais personne dans cette ville, mais si tu souhaites revenir ici alors tu ne seras jamais seule. Tu auras tous les soirs des amis devant et derrière le bar."
+
+    myself "Tu as l’air de beaucoup apprécier cet endroit."
+
+    gerante "Évidemment, c’est moi la gérante ! Le Yofukashi c'est mon bébé, mon bijou. Mes employés sont comme les membres de ma famille et les clients sont mes plus proches amis."
+    gerante "Ici ils pleurent dans mes bras, ils rient à en réveiller les voisins, parfois ils boivent pour oublier, parfois pour rendre la nuit mémorable. Chaque soir est un spectacle, une histoire ou une confidence, et moi je veille sur ce petit royaume de la nuit."
+    gerante "Mais ce soir tu es la seule qui est venue Alix ! Alors ça fait de toi… ma seule amie. Et tu sais ce que font les amies entre elles ? Elles se racontent tout !"
+    
+    myself "Euh… Eline je…"
+
+    gerante "Quels sont tes secrets Alix ? Je te promets que je ne les répéterai à personne…"
+
+    show Rana:
+        yalign 0.067
+        xalign 0.75
+
+    gerante "Rana vas t’en j'étais en pleine discussion avec Alix, c'est très important !"
+
+    Rana "Hein ?"
+
+    myself "Merci Eline pour toutes ces belles explications mais il est tard je dois rentrer. Demain je commence à écrire et je veux me lever tôt. Bonne soirée !"
+
+    gerante "Oh non déjà ? Tu reviens demain ?"
+
+    myself "... Oui. À demain."
+
+    # Jump back to the main story after this choice
+    jump after_choice
+
 # Le jeu commence ici
 label start:
     window show
+    show main_menu_animated
 
-    l_i "Test"
-    e_without_callback "test"
-    e_without_callback "test"
+    myself "C’est… ici ? Est ce que c’est une blague ?"
+    myself "Une ruelle sombre et un bar glauque… Super. Je suppose que c’est là que je dois récupérer mes clés."
+    myself "J’espère qu’ils sont pas trop bruyants, je vais être juste au dessus et il faut que je me concentre sur mes projets d’écriture…"
+    myself "..."
+    myself "Alors c’est ça ma nouvelle vie."
 
+    hide main_menu_animated
+
+    Rana_i "Je m’ennuieeeee…"
+    gerante_i_hide"Ce genre de soir me ruine le moral, même nos clients les plus fidèles n’ont pas daignés sortir."
+    Rana_i "On a déjà nettoyé le lave verre ?"
+    gerante_i_hide "Trois fois."
+
+
+    with pixellate
     scene fond
 
-    show M idle:
+    show gerante idle:
         yalign 0.042
         xalign 0.4
-    show L :
+    show Rana :
         yalign 0.067
         xalign 0.75
-    with fade
+    
+    gerante_i "BONSOIR !!!"
 
-    e_i "test"
+    myself "Euh bonsoir. Je viens récupérer les clés pour l’appartement du dessus."
 
-    myself "test"
+    gerante_i "Ah."
+    gerante_i "Tu veux boire quelque chose ?"
 
-    "test"
+    myself "Euh..."
 
-    l_i "test"
+    gerante_i "C’est moi qui offre ! Ca nous ferai plaisir d’avoir quelqu’un avec nous ce soir, surtout si c’est une nouvelle tête !"
 
-    e "test"
-
-    l "test"
-
-    myself "test"
-
+    myself "Bon… Si c’est gratuit…"
+    
     window hide
 
     # Call the drink selection flow
@@ -488,14 +675,52 @@ label start:
     window show
     scene fond
 
-    show M idle:
+    show gerante idle:
         yalign 0.042
         xalign 0.4
-    show L :
+    show Rana :
         yalign 0.067
         xalign 0.75
 
-    e "test"
+    gerante "Moi c’est Eline, et elle c’est Rana. Bienvenu au Yofukashi !"
+    Rana "Yo."
+
+    myself "Enchantée. Alix."
+
+    gerante "Alors Alix, dis moi : qu’est ce que tu viens faire à Néo Stras ?"
+
+    myself "Je viens pour écrire. J’ai vécu longtemps chez mes parents et j’y ai écrit mon premier livre."
+    myself "Comme ça m'a rapporté un peu d’argent, j’avais envie de changer d’air, trouver de nouvelles inspirations pour continuer là dedans."
+
+    Rana "C’est quoi le livre ?"
+
+    myself "Amour silicone."
+
+    Rana "Hm."
+
+    myself "Tu connais ?"
+
+    Rana "Non, je me suis arrêtée à la lecture du résumé. Ça avait l’air niais et vide et … "
+
+    gerante "Une écrivaine à mon bar ! Quel honneur ! Je suis sûre que ton roman est super. N’est ce pas Rana ?"
+
+    Rana "Ah, euh, oui bien sûr."
+
+    vox "VOX interrompt votre programme de divertissement pour un flash info."
+    vox "Vos représentants Neo Strassiens étudient actuellement à l’assemblée démocratique la proposition de loi de *nom entreprise divertissement* afin d’encadrer la production artistique déviante et haineuse."
+
+    Rana "...connards..."
+
+    Rana "Je vais fumer."
+
+    # Display the choice menu
+    call screen choice_menu
+
+    return
+
+# Define a label to continue the main story after the choice
+label after_choice:
+    with fade
 
     window hide
 
@@ -512,4 +737,3 @@ label start:
     pause
 
     return
-
