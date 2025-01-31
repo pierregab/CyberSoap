@@ -33,8 +33,23 @@ init python:
         global total_loading_duration
         total_loading_duration = 0
 
+image splash = "splash.png"
+
+label splashscreen:
+    scene black
+    with Pause(0.5)
+
+    show splash with Pixellate(2,8)
+    with Pause(3)
+
+    scene black with Pixellate(2,8)
+
+    return
+
 
 image fond = "fond_resized4.png"
+
+image ruelle = "ruelle.png"
 
 image computer_screen = "pc.png"
 
@@ -121,6 +136,52 @@ image car_animation:
     "gui/menu/anim_voiture/fond23.png"
     # random delay between 10 and 30 seconds
     pause random_delay_for_car_animation()
+    repeat
+
+image rana_ruelle_animation:
+    "images/Rana_ruelle/rana2.png"
+    linear 0.5
+    "images/Rana_ruelle/rana3.png"
+    linear 0.5
+    "images/Rana_ruelle/rana4.png"
+    linear 0.2
+    "images/Rana_ruelle/rana5.png"
+    linear 0.2
+    "images/Rana_ruelle/rana6.png"
+    linear 0.2
+    "images/Rana_ruelle/rana7.png"
+    linear 1
+    "images/Rana_ruelle/rana8.png"
+    linear 0.2
+    "images/Rana_ruelle/rana9.png"
+    linear 0.2
+    "images/Rana_ruelle/rana10.png"
+    linear 0.2
+    "images/Rana_ruelle/rana11.png"
+    linear 0.2
+    "images/Rana_ruelle/rana12.png"
+    linear 1
+    #"images/Rana_ruelle/rana13.png"
+    #linear 1
+    #"images/Rana_ruelle/rana13.png"
+    #linear 1
+    "images/Rana_ruelle/rana12.png"
+    linear 2
+    repeat
+
+image cigarette_animation:
+    xalign 0.5
+    yalign 0.5
+    "images/cigarette/red_ridge/cig2.png"
+    pause 0.5
+    "images/cigarette/red_ridge/cig3.png"
+    pause 0.5
+    "images/cigarette/red_ridge/cig4.png"
+    pause 0.5
+    "images/cigarette/red_ridge/cig5.png"
+    pause 0.5
+    "images/cigarette/red_ridge/cig6.png"
+    pause 1
     repeat
 
 
@@ -244,6 +305,21 @@ image Neko_loading:
     crop (9120, 0, 480, 480)
     "NekoOS_loading.png"   # Twentieth frame
     # trigger the next scene 
+
+image Rana_speaking:
+    yalign 0.54
+    xalign 0.10
+    "images/Rana_ruelle_speaking/Rana_2_speaking1.png"
+    pause 0.2
+    "images/Rana_ruelle_speaking/Rana_2_speaking2.png"
+    pause 0.2
+    "images/Rana_ruelle_speaking/Rana_2_speaking3.png"
+    pause 0.2
+    "images/Rana_ruelle_speaking/Rana_2_speaking2.png"
+    pause 0.2
+    "images/Rana_ruelle_speaking/Rana_2_speaking1.png"
+    pause 0.2
+    repeat 
     
     
 
@@ -287,16 +363,16 @@ image Rana :
 
 
 # Déclarez les personnages utilisés dans le jeu.
-define gerante = Character('Eline', color="#612067", what_slow_cps=30, what_slow_abortable=False, callback=eline_speaking_callback)
-define gerante_i = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=False, callback=eline_speaking_callback)
-define gerante_i_hide = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=False)
+define gerante = Character('Eline', color="#612067", what_slow_cps=30, what_slow_abortable=True, callback=eline_speaking_callback)
+define gerante_i = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=True, callback=eline_speaking_callback)
+define gerante_i_hide = Character('???', color="#612067", what_slow_cps=30, what_slow_abortable=True)
 
-define Rana = Character('Rana', color="#20675a", what_slow_cps=30, what_slow_abortable=False)
-define Rana_i = Character('???', color="#20675a", what_slow_cps=30, what_slow_abortable=False)
+define Rana = Character('Rana', color="#20675a", what_slow_cps=30, what_slow_abortable=True)
+define Rana_i = Character('???', color="#20675a", what_slow_cps=30, what_slow_abortable=True)
 
-define myself = Character('Alix', color="#53ddf3", what_slow_cps=30, what_slow_abortable=False)
+define myself = Character('Alix', color="#53ddf3", what_slow_cps=30, what_slow_abortable=True)
 
-define vox = Character('VOX', color="#f81717", what_slow_cps=30, what_slow_abortable=False)
+define vox = Character('VOX', color="#f81717", what_slow_cps=30, what_slow_abortable=True)
 
 label time_app:
     call screen news_app
@@ -544,7 +620,7 @@ label drink_selection_flow:
     call screen drink_order_buttons
     return
 
-screen choice_menu():
+screen choice_menu1():
     zorder 100  # High zorder to ensure it's in front of everything
     vbox:
         xalign 0.2
@@ -559,6 +635,21 @@ screen choice_menu():
             action Jump("stay_with_eline")
             style "menu_choice_button"
 
+screen choice_menu2():
+    zorder 100  # High zorder to ensure it's in front of everything
+    vbox:
+        xalign 0.2
+        yalign 0.9  # Adjust the vertical position as needed
+        spacing 20  # Adjust spacing between buttons
+
+        textbutton "Qu’est ce que c’était ce flash info ? Tu crois qu’ils veulent vraiment limiter l’art ?":
+            action Jump("rana_info_choice")
+            style "menu_choice_button"
+
+        textbutton "Tu vis ici depuis longtemps ?":
+            action Jump("rana_small_talk")
+            style "menu_choice_button"
+
 style menu_choice_button:
     size_group "choice"
     xalign 0.5
@@ -569,12 +660,106 @@ style menu_choice_button:
     xminimum 300
     text_align 0
 
+label rana_info_choice:
+
+    myself "Qu’est ce que c’était ce flash info ? Tu crois qu’ils veulent vraiment limiter l’art ?"
+
+    Rana "Ça a commencé avec des avertissements aux artistes les plus controversés, puis les médias ont gosthé de leurs plateformes tout ce qui pouvait être un peu trop piquant pour notre gouvernement et nos patrons."
+    Rana "Des mots, des images, des sons effacés pour toujours de NSN. Et maintenant ils veulent aller plus loin, toujours plus loin, il veulent tout bannir."
+    Rana "[nom entreprise divertissement] aura le monopole de la musique, du cinéma, de la photo, de la peinture… de l’art quoi."
+
+    myself "C’est horrible ! Comment je vais faire pour écrire ?"
+
+    Rana "Aha ne t’inquiètes pas, vu ton style je suis certaine que la [entreprise] pourrait accepter de te produire."
+    Rana "Il te suffira de rester sage et de ne rien dire de méchant : comporte toi comme une enfant, ne dis jamais de gros mots ou sinon tes parents te mettrons au cachot !"
+
+    myself "Et… si un jour je n’avais plus envie d'être sage ?"
+
+    Rana "Alors il faudra faire comme pour toutes les crises d’ado ! Soit tu fugues, soit tu te rebelles contre les parents. Mais pour ça il faut déjà être prêt à se pendre des claques."
+
+    return
+
+label rana_small_talk:
+
+    myself "Tu vis ici depuis longtemps ?"
+
+    Rana "Depuis toujours. Dans cette ville quand tu naît ici, tu travailles ici et tu meurs ici. Que ce soit dans un bureau en haut d’un building ou au milieu des poubelles, tout le monde a le même destin pourri."
+
+    myself "Tu as une triste vision de la vie…"
+    
+    Rana "Mais Alix c’est la réalité de Neo Stras."
+    Rana "Ensuite si ce sont juste les lumières et les paillettes qui t'intéressent..."
+    Rana "Si tu cherches juste à t’inspirer de la misère et de ses jolies couleurs sous les néons, si ton but c’est d'écrire des romans creux dont personne ne se souviendra jamais… alors j’imagine que tu t’y plairas."
+
+    myself "Je ne comprends pas. Si tu hais tant cette ville, pourquoi ne pas partir ?"
+
+    Rana "Tu crois qu’on peut toujours fuir ses problèmes ? Des fois il n’y a pas d’autre choix que de les affronter. Si j’abandonne cette ville, je m’abandonne moi même."
+
+    return 
 
 label smoke_with_rana:
-    "Il se passe des trucs"
+
+    myself "Je peux t’accompagner ?"
+    Rana "Euh oui si tu veux."
+
+    # Hide all previously shown elements at once to prevent staggered hiding
+    hide all
+
+    # Hide the dialogue window to prevent the textbox from appearing
+    window hide
+
+    # Show cigarette animation on black screen
+    scene black with dissolve
+    show cigarette_animation  # Make sure this image is defined
+    with Pause(3.0)  # Let animation play briefly before dialogue
+
+    
+    # Show the dialogue window again
+    window show
+
+    # Replace 'fond' with 'ruelle' using a dissolve transition
+    scene ruelle:
+        ypos -0.25
+        xalign 0.5
+    with dissolve
+
+    show rana_ruelle_animation:
+        yalign 0.54
+        xalign 0.10
+
+    pause 4.5
+
+    # Passer à l'image de Rana en train de parler
+    hide rana_ruelle_animation
+    show Rana_speaking
+
+    Rana "Alors, Alix, quelles sont tes premières impressions de Neo Stras ?"
+
+    # Revenir à l'animation après le dialogue
+    hide Rana_speaking
+    show rana_ruelle_animation:
+        yalign 0.54
+        xalign 0.10
+
+    myself "Oh je viens d’arriver, j’ai pas encore vu grand chose. J’aime bien les lumières de la ville la nuit, l’impression qu’elle dort jamais. Ce quartier est un peu plus… sombre."
+
+    # Passer à l'image de Rana en train de parler
+    hide rana_ruelle_animation
+    show Rana_speaking
+
+    Rana "Oui j’imagine qu’on peut y trouver un certain charme."
+
+    hide Rana_speaking
+    show rana_ruelle_animation:
+        yalign 0.54
+        xalign 0.10
+
+    call screen choice_menu2
+
     # Continue with the storyline where the player goes to smoke with Rana.
     # Jump back to the main story after this choice
     jump after_choice
+
 
 label stay_with_eline:
     # This label handles the scenario where the player chooses to stay with Eline.
@@ -582,7 +767,8 @@ label stay_with_eline:
     hide Rana with fade 
 
     vox "L’insecurité qui sévit dans les rues de notre belle ville saura être combattu à sa source grâce à cette loi."
-    vox "La entreprise pour l’ordre sera à votre côté pour faire le ménage parmis les artistes qui veulent nuit à notre société. Elle remettra à l’ordre tous les fauteurs de trouble, les mésinformateurs, des petits délinquants du graphiti jusqu’aux organisation d’artistes anarchistes qui se prennent pour la mafia !"
+    vox "La entreprise pour l’ordre sera à votre côté pour faire le ménage parmis les artistes qui veulent nuit à notre société."
+    vox "Elle remettra à l’ordre tous les fauteurs de trouble, les mésinformateurs, des petits délinquants du graphiti jusqu’aux organisation d’artistes anarchistes qui se prennent pour la mafia !"
 
     gerante "Je vais baisser le son."
 
@@ -596,12 +782,14 @@ label stay_with_eline:
 
     myself "Comment ça ? C’est une sorte de… secte ?"
 
-    gerante "Ahaha non non ne t’inquiètes pas. C’est juste que tu ne connais personne dans cette ville, mais si tu souhaites revenir ici alors tu ne seras jamais seule. Tu auras tous les soirs des amis devant et derrière le bar."
+    gerante "Ahaha non non ne t’inquiètes pas. C’est juste que tu ne connais personne dans cette ville, mais si tu souhaites revenir ici alors tu ne seras jamais seule."
+    gerante "Tu auras tous les soirs des amis devant et derrière le bar."
 
     myself "Tu as l’air de beaucoup apprécier cet endroit."
 
     gerante "Évidemment, c’est moi la gérante ! Le Yofukashi c'est mon bébé, mon bijou. Mes employés sont comme les membres de ma famille et les clients sont mes plus proches amis."
-    gerante "Ici ils pleurent dans mes bras, ils rient à en réveiller les voisins, parfois ils boivent pour oublier, parfois pour rendre la nuit mémorable. Chaque soir est un spectacle, une histoire ou une confidence, et moi je veille sur ce petit royaume de la nuit."
+    gerante "Ici ils pleurent dans mes bras, ils rient à en réveiller les voisins, parfois ils boivent pour oublier, parfois pour rendre la nuit mémorable."
+    gerante "Chaque soir est un spectacle, une histoire ou une confidence, et moi je veille sur ce petit royaume de la nuit."
     gerante "Mais ce soir tu es la seule qui est venue Alix ! Alors ça fait de toi… ma seule amie. Et tu sais ce que font les amies entre elles ? Elles se racontent tout !"
     
     myself "Euh… Eline je…"
@@ -628,7 +816,8 @@ label stay_with_eline:
 # Le jeu commence ici
 label start:
     window show
-    show main_menu_animated
+    show main_menu_animated:
+        ypos +0.0005
 
     myself "C’est… ici ? Est ce que c’est une blague ?"
     myself "Une ruelle sombre et un bar glauque… Super. Je suppose que c’est là que je dois récupérer mes clés."
@@ -714,7 +903,7 @@ label start:
     Rana "Je vais fumer."
 
     # Display the choice menu
-    call screen choice_menu
+    call screen choice_menu1
 
     return
 

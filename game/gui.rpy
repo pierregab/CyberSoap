@@ -172,13 +172,13 @@ define gui.interface_text_color = '#ffffff'
 ## Polices et tailles de police ################################################
 
 ## Les polices utilisées pour le texte du jeu.
-define gui.text_font = "dogicapixel.ttf"
+define gui.text_font = "pixeleum-48.ttf"
 
 ## Les polices utilisées pour le nom des personnages.
-define gui.name_text_font = "dogicapixel.ttf"
+define gui.name_text_font = "pixeleum-48.ttf"
 
 ## Les polices utilisées pour les textes « hors du jeu ».
-define gui.interface_text_font = "dogicapixel.ttf"
+define gui.interface_text_font = "pixeleum-48.ttf"
 
 ## La taille normale pour les dialogues.
 define gui.text_size = 30
@@ -222,8 +222,8 @@ define gui.textbox_yalign = 1.0
 ## L’emplacement relatif à la zone de texte du nom du personnage en train de
 ## parler. La valeur peut être un nombre entier de pixels depuis la gauche ou le
 ## haut ou 0.5 pour le centre.
-define gui.name_xpos = 150
-define gui.name_ypos = -35
+define gui.name_xpos = 145
+define gui.name_ypos = -55
 
 ## L’alignement horizontal du nom du personnage. La valeur peut être 0.0 pour un
 ## alignement à gauche, 0.5 pour le centrer et 1.0 pour un alignement à droite.
@@ -246,7 +246,7 @@ define gui.namebox_tile = False
 ## L’emplacement du dialogue relatif à la zone de texte. La valeur peut être un
 ## nombre entier de pixels depuis la gauche ou le haut ou 0.5 pour le centre.
 define gui.dialogue_xpos = 150
-define gui.dialogue_ypos = 20
+define gui.dialogue_ypos = -10
 
 ## La largeur maximale en pixels de la zone de dialogue.
 define gui.dialogue_width = 1600
